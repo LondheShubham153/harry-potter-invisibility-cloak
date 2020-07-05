@@ -2,7 +2,13 @@
 import cv2 
 import numpy as np 
 import time 
-  
+from pygame import mixer  # Load the popular external library
+
+mixer.init()
+mixer.music.load('harry-potter-theme.mp3')
+mixer.music.play()
+
+
 capture_video = cv2.VideoCapture(0) 
      
 # camera takes a second to warm up 
@@ -17,7 +23,7 @@ for i in range(60):
     if return_val == False : 
         continue 
   
-  
+
 while True: 
     return_val, frame = capture_video.read() 
     if not return_val : 
